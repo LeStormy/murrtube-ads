@@ -16,14 +16,14 @@
 
 @import "bulma";
 
-$dark-1: '#1d1e23';
+$dark-1: '#12121a';
 
 .hidden {
   display: none
 }
 
 .has-background-murrtube-dark {
-  background-color: #1d1e23 !important;
+  background-color: #12121a !important;
 }
 
 .notification-badge {
@@ -63,7 +63,7 @@ $dark-1: '#1d1e23';
 
 body {
   font-family: 'Nunito Sans', sans-serif !important;
-  background-color: #13151a;
+  background-color: #15151d;
   min-height: 100vh
 }
 
@@ -119,7 +119,7 @@ body {
   border-radius: 0%;
   background-color: transparent !important;
   &:hover {
-    background-color: #1d1e23 !important;
+    background-color: #12121a !important;
   }
 }
 
@@ -130,7 +130,7 @@ body {
   border-radius: 0%;
   background-color: transparent !important;
   &:hover {
-    background-color: #1d1e23 !important;
+    background-color: #12121a !important;
     border-bottom: 1px solid salmon !important;
     color: salmon !important;
     &:after {
@@ -262,13 +262,13 @@ body {
 .card {
   display:flex;
   flex-direction: column;
-  background-color: #1d1e23 !important;
+  background-color: #12121a !important;
 }
 
 .related-video-card {
   display:flex;
   flex-direction: column;
-  background-color: #1d1e23 !important;
+  background-color: #12121a !important;
   color: #B5B5B5
 }
 
@@ -374,6 +374,7 @@ input[type=file][data-direct-upload-url][disabled] {
 .navbar {
   border: none !important;
   border-bottom: 1px solid #363636 !important;
+  background-color: #12121a !important;
 }
 
 .is-background-transparent {
