@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get 'cookies', to: 'application#cookies_policy'
   get 'about', to: 'application#about'
   get 'contact_us', to: 'application#contact_us'
+
+  resources :posts, path: 'news'
 end

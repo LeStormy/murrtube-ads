@@ -22,39 +22,37 @@ $dark-1: '#12121a';
   display: none
 }
 
-.has-background-murrtube-dark {
-  background-color: #12121a !important;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Walter Turncoat', cursive;  
 }
 
-.notification-badge {
-  position: relative;
-  padding: 0 2px;
+h1 {
+  font-size: 3rem !important;
 }
 
-.notification-badge::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #2273ff;
+h2 {
+  font-size: 2.5rem !important;
 }
 
-.flash-message {
-  position: fixed !important;
-  max-width: 30%;
-  right: 1rem;
-  z-index: 1000;
+h3 {
+  font-size: 2rem !important;
 }
 
-.notification {
-  padding: 1rem 1.5rem !important;
+h4 {
+  font-size: 1.5rem !important;
 }
 
-.error-field {
-  border: 1px solid salmon !important;
+h5 {
+  font-size: 1.25rem !important;
+}
+
+h6 {
+  font-size: 1rem !important;
+}
+
+.is-256x256 {
+  width: 256px;
+  height: 256px;
 }
 
 .has-font-walter {
@@ -67,88 +65,16 @@ body {
   min-height: 100vh
 }
 
-.user-profile {
-  border: 1px solid #2c2d35;
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 2rem;
+.has-text-lighter {
+  color: #cacaca !important;
 }
 
-.medium-info {
-  border: 1px solid #2c2d35;
-  padding: 20px;
-  border-radius: 10px;
+.has-text-lighter-1 {
+  color: #a9a9a9 !important;
 }
 
-.simple-box {
-  border: 1px solid #2c2d35;
-  padding: 1rem;
-  border-radius: 10px;
-}
-
-.pagination-box {
-  border: 1px solid #2c2d35;
-  padding: 20px 40px;
-  border-radius: 10px;
-}
-
-.is-secondary {
-  color: #979797 !important;
-  background-color: transparent !important;
-  border-color: rgb(74, 74, 74) !important;
-  transition: 0.2s;
-  &:hover {
-    border-color: rgb(138, 138, 138) !important;
-  }
-}
-
-.duration-box {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.comment {
-  padding: 0.75rem;
-}
-
-.is-underlined-button {
-  border: none;
-  border-bottom: 1px solid white !important;
-  border-radius: 0%;
-  background-color: transparent !important;
-  &:hover {
-    background-color: #12121a !important;
-  }
-}
-
-.is-underlined-button-primary {
-  border: none;
-  border-bottom: 1px solid #1079BF !important;
-  color: #1079BF !important;
-  border-radius: 0%;
-  background-color: transparent !important;
-  &:hover {
-    background-color: #12121a !important;
-    border-bottom: 1px solid salmon !important;
-    color: salmon !important;
-    &:after {
-      content: 'Unlike';
-    }
-  }
-}
-
-.comment-text-area {
-  font-size: small;
-}
-
-.fill-available {
-  width: -webkit-fill-available;
-}
-
-.flex-shrink-0 {
-  flex-shrink: 0;
+.has-text-lighter-2 {
+  color: #999999 !important;
 }
 
 .bottom-bordered-title {
@@ -175,7 +101,6 @@ body {
   white-space: pre-line;
 }
 
-
 .gap-1 {
   gap: 1rem;
 }
@@ -192,88 +117,10 @@ body {
   gap: 4rem;
 }
 
-.is-80x80 {
-  width: 80px;
-  height: 80px;
-}
-
-.is-50x50 {
-  width: 50px;
-  height: 50px;
-}
-
-.input, .textarea, .ts-control {
-  background-color: transparent !important;
-  border-color: rgba(50, 50, 50, 0.7);
-  &:hover {
-    border-color: rgb(91, 91, 91);
-  }
-  &:focus {
-    border-color: rgb(138, 138, 138);
-  }
-  box-shadow: none !important;
-}
-
-.ts-control, input  {
-  color: white !important;
-}
-
-.ts-dropdown {
-  border: 1px solid rgb(138, 138, 138) !important;
-}
-
-.option {
-  background-color: #17181C !important;
-  color: white !important;
-  &:hover {
-    background-color: #2c2d35 !important;
-  }
-}
-
-.multi > .ts-control > .item {
-  color: white !important;
-  background-color: #1079BF !important;
-}
-
-#global-search-bar {
-  width: 600px;
-  background-color: transparent;
-  border-color: rgba(36, 36, 36, 0.7) !important;
-  &:hover {
-    border-color: rgba(50, 50, 50, 1) !important;
-  }
-  &:focus {
-    border-color: rgba(75, 75, 75, 1) !important;
-  }
-}
-
-.min-width-fit-content {
-  min-width: fit-content;
-}
-
-.video-image {
-  object-fit: cover !important;
-}
-
-.ad-image {
-  object-fit: cover !important;
-}
-
-.card {
+.box {
   display:flex;
   flex-direction: column;
   background-color: #12121a !important;
-}
-
-.related-video-card {
-  display:flex;
-  flex-direction: column;
-  background-color: #12121a !important;
-  color: #B5B5B5
-}
-
-.media-content {
-  min-width: 0;
 }
 
 .is-truncated-text {
@@ -282,81 +129,8 @@ body {
   text-overflow: ellipsis;
 }
 
-.modal-background {
-  background-color: rgba(10, 10, 10, 0.86) !important;
-}
-
-.modal-card-head {
-  background-color: #1f2025 !important;
-  border-bottom: 0 !important;
-}
-
-.modal-card-body {
-  background-color: #1f2025 !important;
-}
-
-.without-footer {
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-}
-
 .rounded-full {
   border-radius: 100%;
-}
-
-.direct-upload {
-  display: inline-block;
-  position: relative;
-  padding: 2px 4px;
-  border: 1px solid rgba(255, 255, 255, 1);
-  border-radius: 3px;
-  font-size: 1rem;
-  line-height: 13px;
-  width: 100%;
-  height: 3rem;
-}
-
-.direct-upload--pending {
-  opacity: 0.6;
-}
-
-.direct-upload__progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  opacity: 0.7;
-  background: #1079BF;
-  transition: width 120ms ease-out, opacity 60ms 60ms ease-in;
-  transform: translate3d(0, 0, 0);
-}
-
-.direct-upload--complete .direct-upload__progress {
-  opacity: 1;
-}
-
-.direct-upload--error {
-  border-color: red;
-}
-
-input[type=file][data-direct-upload-url][disabled] {
-  display: none;
-}
-
-.file {
-  display: block !important;
-}
-
-.file {
-  display: block !important;
-}
-
-.file-name {
-  max-width: 100%;
-}
-
-.line-height-2-5 {
-  line-height: 2.5rem;
 }
 
 .image > img {
@@ -365,23 +139,8 @@ input[type=file][data-direct-upload-url][disabled] {
   height: inherit;
 }
 
-.navbar-avatar {
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-}
-
 .navbar {
   border: none !important;
   border-bottom: 1px solid #363636 !important;
   background-color: #12121a !important;
-}
-
-.is-background-transparent {
-  background: transparent !important;
-}
-
-.listbox, .no-results, .create  {
-  background-color: #17181C !important;
-  color: white !important;
 }

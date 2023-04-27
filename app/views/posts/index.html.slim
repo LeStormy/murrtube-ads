@@ -1,0 +1,14 @@
+.columns
+  .column.is-6-desktop.is-offset-3-desktop
+    - @posts.each do |post|
+      = link_to post_path(post.id)
+        p.is-size-3.has-text-weight-light.pb-3.has-text-lighter-1 = post.created_at.strftime("%B %d, %Y")
+        .box.mb-6
+          .columns 
+            .column.is-narrow
+              figure.image.is-128x128
+                = image_tag post.image_url
+            .column
+              h3.is-size-5-mobile = post.title
+              .pt-3.has-text-lighter
+                p = post.description
