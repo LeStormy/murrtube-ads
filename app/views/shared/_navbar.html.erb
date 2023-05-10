@@ -14,13 +14,8 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <%= link_to 'About', root_path, class: "#{current_page?(:controller => 'application', :action => 'about') ? 'has-text-link has-text-weight-bold' : ''} navbar-item" %>
-      <%= link_to 'Terms of use', terms_path, class: "#{current_page?(:controller => 'application', :action => 'terms') ? 'has-text-link has-text-weight-bold' : ''} navbar-item" %>
-      <%= link_to 'Privacy Policy', privacy_path, class: "#{current_page?(:controller => 'application', :action => 'privacy') ? 'has-text-link has-text-weight-bold' : ''} navbar-item" %>
-      <%= link_to 'Cookies Policy', cookies_path, class: "#{current_page?(:controller => 'application', :action => 'cookies_policy') ? 'has-text-link has-text-weight-bold' : ''} navbar-item" %>
-      <%= link_to 'Contact us', contact_us_path, class: "#{current_page?(:controller => 'application', :action => 'contact_us') ? 'has-text-link has-text-weight-bold' : ''} navbar-item" %>
-      <%= link_to 'News', posts_path, class: "#{current_page?(:controller => 'posts', :action => 'index') ? 'has-text-link has-text-weight-bold' : ''} navbar-item" %>
-      <%= link_to 'Advertise', advertise_path, class: "#{current_page?(:controller => 'application', :action => 'advertise') ? 'has-text-link has-text-weight-bold' : ''} navbar-item" %>
+      <%= link_to 'Advertise', root_path, class: "#{current_page?(:controller => 'application', :action => 'advertise') ? 'has-text-link has-text-weight-bold' : ''} navbar-item" %>
+      <%= link_to 'My Ads', ads_path, class: "#{current_page?(:controller => 'ads', :action => 'index') ? 'has-text-link has-text-weight-bold' : ''} navbar-item" %>
     </div>
   </div>
    <div class="navbar-end is-vcentered">

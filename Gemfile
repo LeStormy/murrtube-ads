@@ -64,17 +64,12 @@ end
 # SLIM
 gem 'slim-rails'
 
-# Auth
-gem 'devise'
-
 # CSS
 gem 'bulma-rails'
 
 # BUNDLER
 gem 'vite_rails'
 
-# Pagination
-gem 'pagy'
+gem "aws-sdk-s3"
 
-# ActiveAdmin
-gem 'activeadmin'
+gem "groupdate"

@@ -1,0 +1,43 @@
+h1.is-size-1.has-text-centered.has-font-walter.pt-3.pb-5
+  | Your ad campaigns
+.columns
+  .column.is-6-desktop.is-offset-3-desktop
+    - @ads.each do |ad|
+      p.is-size-5.has-text-weight-light.pb-3.has-text-lighter-1
+        | From&nbsp;
+        span.has-text-light
+          = ad[:starts_on].strftime("%B %d, %Y")
+        | &nbsp;until&nbsp;
+        span.has-text-light
+          = ad[:ends_on].strftime("%B %d, %Y")
+      .box.mb-6
+        .columns 
+          .column.is-narrow
+            figure.image.is-128x128
+              = image_tag ad[:image_url]
+          .column
+            h3.is-size-5-mobile = ad[:title]
+            - if ad[:running] == false
+              p.has-text-danger = "Not Live"
+            - else
+              p.has-text-info = "Live"
+            .pt-3.has-text-lighter
+              a href=ad[:url] target="_blank"
+                = ad[:url]
+        table.table
+          thead
+            tr 
+              th = "Week"
+              th = "Impressions"
+              th = "Clicks"
+          tbody
+            - ad[:data_per_week].each do |week, data|
+              tr
+              td = week
+              td = number_with_delimiter(data[:impressions])
+              td = number_with_delimiter(data[:clicks] || 0)
+          tfoot
+            tr
+              td.has-text-weight-bold = "Total"
+              td.has-text-weight-bold = number_with_delimiter(ad[:total_impressions])
+              td.has-text-weight-bold = number_with_delimiter(ad[:total_clicks])

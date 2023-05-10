@@ -22,14 +22,22 @@ default: &default
 
 development:
   primary:
-    database: murrtube_about_development
+    database: murrtube_ultra_development
+    <<: *default
+  murrtube:
+    database: murrtube_ultra_development
+    database_tasks: false
+    <<: *default
+  statistics:
+    database: murrtube_ultra_development_statistics
+    database_tasks: false
     <<: *default
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: murrtube_about
+  #username: murrtube_ads
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +65,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: murrtube_about_test
+  database: murrtube_ads_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -82,4 +90,11 @@ test:
 production:
   primary:
     <<: *default
-    url: <%= ENV["DATABASE_URL"] %>
+    url: <%= ENV["MURRTUBE_READONLY_DATABASE_URL"] %>
+  murrtube:
+    <<: *default
+    database_tasks: false
+    url: <%= ENV["MURRTUBE_READONLY_DATABASE_URL"] %>
+  statistics:
+    <<: *default
+    url: <%= ENV["MURRTUBE_STATISTICS_READONLY_DATABASE_URL"] %>

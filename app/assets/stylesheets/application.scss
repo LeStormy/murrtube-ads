@@ -59,6 +59,30 @@ h6 {
   font-family: 'Walter Turncoat', cursive;
 }
 
+input, textarea, select {
+  background-color: #15151d !important;
+  border: 1px solid #7575ab !important;
+  color: white !important;
+  border-radius: 5px !important;
+
+  &:disabled {
+    color: #7575ab !important;
+  }
+}
+
+.token-input {
+  width: 300px !important;
+  font-weight: bold !important;
+  font-size: 2rem !important;
+  text-transform: uppercase !important;
+  text-align:center !important;
+}
+
+.table {
+  width: 100% !important;
+  background-color: #15151d !important;
+}
+
 body {
   font-family: 'Nunito Sans', sans-serif !important;
   background-color: #15151d;

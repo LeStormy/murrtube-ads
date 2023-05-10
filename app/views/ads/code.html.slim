@@ -1,0 +1,25 @@
+.mt-4.columns
+  .column.has-text-centered.is-one-third-desktop.is-offset-one-third-desktop.is-half-tablet.is-offset-one-quarter-tablet
+    h1.py-4.is-size-4
+      | Advertiser Code
+    p.pb-4
+      | This was given to you by our team in the process of ordering an ad
+    - flash.each do |type, msg|
+      #flash.pb-4.has-text-danger
+        = msg
+    = form_with url: set_code_path do |form|
+      = form.text_field :token, class: 'input token-input'
+
+javascript:
+  const tokenInput = document.getElementById('token');
+  const errorMessage = document.getElementById('flash');
+
+  tokenInput.addEventListener('input', () => {
+    tokenInput.value = tokenInput.value.toUpperCase()
+    if (tokenInput.value.length === 6) {
+      tokenInput.form.submit();
+    }
+    if (errorMessage) {
+      errorMessage.remove()
+    }
+  });

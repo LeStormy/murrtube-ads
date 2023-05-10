@@ -62,6 +62,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "murrtube_ultra_production"
 
   config.action_mailer.perform_caching = false
+  config.active_storage.service = :minio
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
