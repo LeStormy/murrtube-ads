@@ -3,7 +3,13 @@ class AdsController < ApplicationController
     if cookies.signed["token"].blank?
       render 'code'
     else
-      ad_records = Ad.where(token: cookies.signed["token"]).order(:title)
+      token = cookies.signed["token"]
+      ad_records = 
+        if token == Rails.application.credentials.dig(:master_code)
+          Ad.order(:title)
+        else
+          Ad.where(token: cookies.signed["token"]).order(:title)
+        end
       @ads = ad_records.map do |ad|
         clicks_per_week = AdClick.where(ad_id: ad.id).group_by_week(:created_at).count
         impressions_per_week = AdImpression.where(ad_id: ad.id).group_by_week(:created_at).count
@@ -43,7 +49,9 @@ class AdsController < ApplicationController
   end
 
   def set_code
-    if Ad.find_by(token: params[:token]).present?
+    if params[:token] == Rails.application.credentials.dig(:master_code) ||
+      Ad.find_by(token: params[:token]).present?
+
       cookies.signed["token"] = {value: params[:token], same_site: :strict, expires: 15.days }
       redirect_to ads_path
     else

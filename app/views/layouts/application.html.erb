@@ -1,21 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for?(:title) ? yield(:title) : "Murrtube" %></title>
+    <title>Murrtube Ads</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-
-    <meta property="og:site_name" content="Murrtube"/>
-    <meta property="og:title" content="<%= content_for?(:title) ? yield(:title) : "Murrtube" %>">
-    <meta property="og:description" content="<%= content_for?(:description) ? yield(:description) : "Murrtube, your friendly neighborhood porn website for Furries, Pups, and more!" %>">
-    <meta property="og:image" content="<%= content_for?(:image_url) ? yield(:image_url) : asset_path('logo256.png') %>">
-    <meta name="twitter:site" content="Murrtube" />
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<%= content_for?(:title) ? yield(:title) : "Murrtube" %>">
-    <meta name="twitter:description" content="<%= content_for?(:description) ? yield(:description) : "Murrtube, your friendly neighborhood porn website for Furries, Pups, and more!" %>">
-    <meta name="twitter:image" content="<%= content_for?(:image_url) ? yield(:image_url) : asset_path('logo256.png') %>">
 
     <link rel="icon" type="image/png" href=<%= asset_path('favicon-96x96.png') %> sizes="32x32">
     <link rel="apple-touch-icon" sizes="57x57" href=<%= asset_path('apple-icon-57x57.png') %>>
@@ -42,16 +32,6 @@
 
     <%= vite_client_tag %>
     <%= vite_javascript_tag 'application' %>
-    <!--
-      If using a TypeScript entrypoint file:
-        vite_typescript_tag 'application'
-
-      If using a .jsx or .tsx entrypoint, add the extension:
-        vite_javascript_tag 'application.jsx'
-
-      Visit the guide for more information: https://vite-ruby.netlify.app/guide/rails
-    -->
-
   </head>
 
   <body class="">
