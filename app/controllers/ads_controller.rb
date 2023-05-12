@@ -13,6 +13,7 @@ class AdsController < ApplicationController
       @ads = ad_records.map do |ad|
         clicks_per_week = AdClick.where(ad_id: ad.id).group_by_week(:created_at).count
         impressions_per_week = AdImpression.where(ad_id: ad.id).group_by_week(:created_at).count
+        
         data_per_week = {}
         impressions_per_week.each do |week, count|
           if data_per_week[week.to_s].blank?
@@ -27,12 +28,26 @@ class AdsController < ApplicationController
           data_per_week[week.to_s][:clicks] = count || 0
         end
 
+        obj = {}
+        concurrent_campaigns =
+          AdImpression.group(:ad_id).group_by_week(:created_at).count.map do |pair, count|
+            if count > 0
+              obj[pair[1].to_s] = (obj[pair[1].to_s] || 0) + 1
+            end
+          end
+
+        obj.each do |week, count|
+          if data_per_week[week.to_s].present?
+            data_per_week[week.to_s][:concurrent_campaigns] = count || 0
+          end
+        end
+
         {
           id: ad.id,
           image_url: ad.image.url,
           title: ad.title,
           url: ad.url,
-          data_per_week: data_per_week,
+          data_per_week: Hash[data_per_week.sort_by{|k, v| k}],
           running: !ad.paused,
           starts_on: ad.start_date,
           ends_on: ad.end_date,

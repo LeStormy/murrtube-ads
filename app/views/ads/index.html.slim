@@ -30,14 +30,17 @@ h1.is-size-1.has-text-centered.has-font-walter.pt-3.pb-5
               th = "Week"
               th = "Impressions"
               th = "Clicks"
+              th = "Concurrent campaigns"
           tbody
             - ad[:data_per_week].each do |week, data|
               tr
                 td = week
                 td = number_with_delimiter(data[:impressions])
                 td = number_with_delimiter(data[:clicks] || 0)
+                td = number_with_delimiter(data[:concurrent_campaigns] || 1)
           tfoot
             tr
               td.has-text-weight-bold = "Total"
               td.has-text-weight-bold = number_with_delimiter(ad[:total_impressions])
               td.has-text-weight-bold = number_with_delimiter(ad[:total_clicks])
+              td.has-text-weight-bold = "-"
