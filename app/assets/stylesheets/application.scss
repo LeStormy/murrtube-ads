@@ -21,7 +21,7 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Walter Turncoat', cursive;  
+  font-family: 'Rajdhani', sans-serif;  
 }
 
 h1 {
@@ -54,7 +54,7 @@ h6 {
 }
 
 .has-font-walter {
-  font-family: 'Walter Turncoat', cursive;
+  font-family: 'Rajdhani', sans-serif;  
 }
 
 input, textarea, select {
@@ -137,6 +137,10 @@ body {
 
 .gap-4 {
   gap: 4rem;
+}
+
+.has-text-link-light {
+  color: #619cff !important;
 }
 
 .box {

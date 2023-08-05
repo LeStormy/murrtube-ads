@@ -14,12 +14,12 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <%= link_to 'Advertise', root_path, class: "#{current_page?(:controller => 'application', :action => 'advertise') ? 'has-text-link has-text-weight-bold' : ''} navbar-item" %>
-      <%= link_to 'My Ads', ads_path, class: "#{current_page?(:controller => 'ads', :action => 'index') ? 'has-text-link has-text-weight-bold' : ''} navbar-item" %>
+      <%= link_to 'Advertise', root_path, class: "#{current_page?(:controller => 'application', :action => 'advertise') ? 'has-text-link-light has-text-weight-bold' : ''} navbar-item" %>
+      <%= link_to 'My Ads', ads_path, class: "#{current_page?(:controller => 'ads', :action => 'index') ? 'has-text-link-light has-text-weight-bold' : ''} navbar-item" %>
     </div>
   </div>
    <div class="navbar-end is-vcentered">
-      <%= link_to "https://murrtube.net", class: 'has-text-link has-text-weight-bold navbar-item' do %>
+      <%= link_to "https://murrtube.net", class: 'has-text-link-light has-text-weight-bold navbar-item' do %>
         <i class="fas fa-arrow-right mr-2"></i>Go to Murrtube
       <% end %>
     </div>
